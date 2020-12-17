@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jc的网页</title>
+	<style >
+		.clear:after {
+    	content: '';
+    	display: block;
+   		height: 0;
+   		clear: both;
+		}
+		* {
+    	padding: 0;
+    	margin: 0;
+		}
+        .banner{                 /* //总轮播框--整张图片大小 */
+             width: 1200px;
+            height: 420px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .pp{                 /* //更改图片display属性和浮动 */
+            display: block;
+            float: left;
+            }
+        ll,ol{                       /* //清除列表前面的默认样式圆点 */
+            list-style: none;
+            }
+        ll{　　　　　　　　 
+            width: 1200px;
+            height: 420px;
+        }
+        ol{                               /* //设置控制点的位置 */
+            position: absolute;
+            left: 116px;
+            bottom: 0;
+        }   
+        ol li{                           /* //设置控制点的形状和间距和背景颜色，并且浮动后排成一横排 */
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            float: left;
+            margin: 10px;
+            position: relative;
+            left: 400px;
+            background-color: white;
+            }
+            .on{                                   /* //设置控制点选中时的样式 */
+            background-color: red;
+            }
+            .left-arrow{　　　　　　/* 　//设置左箭头的位置和样式 */
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            top: 150px;
+            left: 0px;
+            font-size: 50px;
+            cursor: pointer;
+            color: white;
+            }
+            .right-arrow{　　　　　/* 　//设置右箭头的位置和样式 */
+            width: 40px;
+             height: 60px;
+            position: absolute;
+            top: 150px;
+            right: 0px;
+            font-size: 75px;
+            cursor: pointer;
+            color: white;
+            }                               /*  //设置控制点选中时的样式 */
+ 
+        .aone {
+            text-decoration: none;
+            color:rgba(0,164,255,0.7);
+            margin-right: 10px;
+        }
+        .atwo {
+            text-decoration: none;
+            color: #BEBEBE;
+        }
+        .athree {
+            text-decoration: none;
+            color: black;
+        }
+        .second-ul>li:hover>a{
+			color:rgba(0,164,255,1);
+        }
+        .first-ul>li:hover>a{
+           color: #BE77FF;
+        }
+         ul{
+        list-style-type:none;
+    	}
+    	.header{
+    		background-color: #393D49;
+    		height: 43px;
+    	}
+    	.header-one{
+    		height: 43px;
+    		width: 1200px;
+    		margin: 0 auto;
+    	}
+    	.first-ul{
+    		float: right;
+    	}
+    	.first-ul>li{
+    		float: left;
+			text-align: center;
+			line-height: 43px;
+    	}
+    	.first{
+    		color:rgba(0,164,255,0.7);
+    		float: left;
+    		font-size: 25px;
+    		margin-top: 4px;
+    		font-weight:bold;
+    	}
+    	.first-one{
+    		font-size: 16px;
+    		color: #BEBEBE;
+    		font-weight:bold;
+    		margin-right: 150px;
+    	}
+    	.first-three{
+    		margin-top: 5px;
+    		margin-right: 20px;
+    	}
+    	.form{
+			float: right;
+            margin-top: 15px;
+            margin-left: 57px;
+		}
+		.search{
+			float: left;
+			width: 222px;
+			height: 30px;
+			padding-top: 10px;
+			padding-left: 19px;
+			border:1px solid rgba(0,164,255,1);
+            display: none;
+		}
+		.submit{
+			float: left;
+			width: 51px;
+			height: 42px;
+			border:1px solid rgba(0,164,255,1);
+			background: #00bb00 url(fa-search.png) no-repeat center center ;
+        }	
+		.header2{
+			height: 83px;
+			background-color:rgba(0,0,0,0.08);
+		}
+		.header-two{
+			height: 63px;
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.second-ul{
+			float: left;
+		}
+		.second-ul>li{
+			float: left;
+			text-align: center;
+			margin-top: 23px;
+			font-size: 20px;
+			margin-left: 47px;
+		}
+		.img1{
+			float: left;
+		}
+		.zhong{
+			height: 420px;
+			background-color: #F4EED0;
+			/* background: url(哈哈.jpg) center left repeat; */
+		}
+		.banner{
+			height: 420px;
+			width: 1200px;
+			position: relative;
+			margin: 0 auto;
+		}
+		.bannerfu>p{
+			font-size: 16px;
+	        color: #D0D0D0;
+			position: absolute;
+			bottom:  1px;
+			right: 0;
+			width: 250px;
+			line-height: 43px;
+			height: 420px;
+/* 			font-weight:bold; */
+			background-color:rgba(0,0,0,0.4);
+			padding-left: 15px;
+		}
+	.leven{
+        	height: 66px;
+        	background-color:#FF9797;
+        }
+        .han{
+        	width: 1200px;
+        	margin: 0 auto;	
+        }
+        .han1{
+        	float: left;
+        	width:80px;
+			height:19px;
+			font-size:19px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			margin-top: 23px;
+			color:white;
+        }
+        .han2{
+        	float: right;
+        	margin-top: 31px;
+        	margin-right: 31px;
+        	width:48px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:white;
+        }
+     .tu{
+        	width: 1200px;
+        	height: 270px;
+        	padding-top:8px;
+        	margin-right: auto;
+        	margin-left: auto;
+        }
+        .twle{
+        	height: 270px;
+        	background-color: #F4EED8;
+        }
+        .img{
+        	width: 230px;
+        	height: 156px;
+        }
+        .zi{
+            background-color:#FCFCFC;
+        	height: 90px;
+        }
+        .yi{
+			position: relative;
+			top: 20px;
+			left: 23px;
+        }
+        .yi2{
+        	position: relative;
+			top: 40px;
+			left: 23px;
+        }
+        .nav4{
+        	float: left;
+        	margin-right: 10px;
+        	position: relative;
+        }
+        .tu>ul{
+        	float: left;
+        	/* padding-left: 5px; */
+        }
+        .p1{
+        	width: 220px;
+        	position: relative;
+        	font-size: 17px;
+        	line-height: 20px;
+        	font-weight:bold;
+        	right: 8px;
+        	bottom: 15px;
+        	color: #4F4F4F;
+        }
+        .p2{
+        	width: 220px;
+        	position: relative;
+        	font-size: 17px;
+        	line-height: 20px;
+        	font-weight:bold;
+        	right: 8px;
+        	bottom: 18px;
+        	color: #4F4F4F;
+        }
+        .p3{
+        	width: 220px;
+        	position: relative;
+        	font-size: 17px;
+        	line-height: 20px;
+        	font-weight:bold;
+        	right: 8px;
+        	bottom: 18px;
+        	color: #4F4F4F;
+        }
+        .p4{
+        	width: 220px;
+        	position: relative;
+        	font-size: 17px;
+        	line-height: 20px;
+        	font-weight:bold;
+        	right: 15px;
+        	bottom: 20px;
+        	color: #4F4F4F;
+        }
+        .p5{
+        	width: 220px;
+        	position: relative;
+        	font-size: 17px;
+        	line-height: 20px;
+        	font-weight:bold;
+        	right: 8px;
+        	bottom: 20px;
+        	color: #4F4F4F;
+        }
+        .kk{
+        	height: 380px;
+        	background-color: #F4EED8;
+        }
+        .jj{
+        	height: 380px;
+        	width: 1200px;
+        	margin: 0 auto;
+        }
+        .last{
+        	background-color: #393D49;
+        	height: 170px;
+        	border-bottom: 1px solid #5B5B5B;
+        }
+        .lastone{
+        	width: 1200px;
+        	margin: 0 auto;
+        	height: 170px;
+        }
+		.imgshe{
+			float: left;
+			position: relative;
+			top: 20px;
+		}
+		.lasttwo{
+			float: left;
+			margin-left:186px ;
+			position: relative;
+			top: 20px;
+		}
+		.lastthree{
+			font-size: 18px;
+			font-weight:bold;
+		}
+		.lastfour{
+			font-size: 16px;
+			position: relative;
+			top: 4px;
+			margin-top: 5px;
+		}
+		.sheng{
+			background-color: #393D49;
+			height: 90px;
+		}
+		.shengyi{
+			width: 1200px;
+			margin: 0 auto;
+			height: 90px;
+		}
+		.shenger{
+			color: #BEBEBE;
+			position: relative;
+			top: 15px;
+			line-height: 25px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body onload="initial()">
+	<div class="header">
+		<div class="header-one clear">
+			<p class="first">旅游社区</p>
+			<ul class="first-ul clear">
+				<li class="first-one"><a href="#" class="atwo">交流</a></li>
+				<li class="first-one"><a href="#" class="atwo">小贴士</a></li>
+				<li class="first-one"><a href="#" class="atwo">发现</a></li>
+				<li class="first-one"><a href="#" class="atwo">旅游</a></li>
+				<li class="first-three"><img src="下载.jpg " height="31px" width="41px"></li>
+				<li class="first-three"><img src="u=2908661357,460241925&fm=26&gp=0.jpg" height="31px" width="41px"></li>
+				<li ><a href="#" class="aone">登陆</a></li>
+                <li ><a href="#" class="aone">注册</a></li>
+			</ul>
+		</div>		
+	</div>	
+	<div class="header2">
+		<div class="header-two clear">	
+			<ul class="second-ul clear">
+				<li class="second-one"><a href="#" class="athree">首页</a></li>
+				<li class="second-one"><a href="#" class="athree">线路</a></li>
+				<li class="second-one"><a href="#" class="athree">旅行社</a></li>
+				<li class="second-one"><a href="#" class="athree">攻略</a></li>
+				<li class="second-one"><a href="#" class="athree">历史风光</a></li>
+				<li class="second-one"><a href="#" class="athree">人文风情</a></li>
+				<li class="second-one"><a href="#" class="athree">关于我们</a></li>
+			</ul>
+			 <form class="form clear" name="form1" >
+                <input type="text" placeholder="输入中文英文关键字关键字" class="search" onfocus="myFocus(this,'#FF9797')" onblur="myblur(this,'white')" value="点此搜索风景" id="np">
+                <input type="button" class="submit" id="nb" >
+             </form>
+		</div>		
+	</div>	
+	<div class="zhong">
+		<div class="banner" id="lun">
+			<div class="bannerfu">
+				<p >人人都说桂林山水甲天下。殊不知在太行山深处，一个集红色、绿色、古色于一身的小县城,却有着另一种迷人的山水风光。晋冀豫鲁边区政府、八路军一二师司令部、新华广播电台、新华日报社等110多个党政机关单位长期驻扎于此。 涉县素以民风淳朴、名胜广被、资源丰富、特产众多而闻名遐迩。</p>
+			</div>
+            <ul class="ll" id="tuhhh">  
+              <li><img src="timg.jpg" height="420px" width="1200px" class="pp" id="hh" data-orient="center" name="myImage"></li>
+              <li><img src="风景2.gif" class="pp" height="420px" width="1200px" ></li>
+              <li><img src="风景1.gif" class="pp" height="420px" width="1200px"></li>
+              <li><img src="62034.gif" class="pp" height="420px" width="1200px"></li>
+              <li><img src="哈哈1.gif" class="pp" height="420px" width="1200px"></li>
+              <li><img src="风景11.jpg" class="pp" height="420px" width="1200px"></li>
+              <li><img src="62035.gif" class="pp" height="420px" width="1200px"></li>
+　　　　    </ul>
+　　　　    <ol> <!--  //列表中放入控制点，第一个控制点给上已选中样式（开始时是第一张图所以第一个控制点也是选中状态） -->
+　　　　　   　<li class="on"></li>
+　　　　　　  <li></li>
+　　　　　　  <li></li>
+　　　　　　  <li></li>
+　　　　　　  <li></li>
+　　　　　　  <li></li>
+　　　　　　  <li></li>
+　　　　    </ol>
+　　　　<div class="left-arrow" id="la">◀</div>  
+　　　　<div class="right-arrow" id="ra">▶</div>   
+		</div>
+	</div>
+	 <div class="leven">
+        <div class="han">
+        	<ul class="nav3 clear">
+                 <li class="han1">风景推荐</li>
+                  <li class="han2">查看全部</li>
+             </ul>
+            </div>
+        	</div>
+            <div class="twle">
+        		<div class="tu clear">
+        			<ul class="nav4 clear ">
+        				<li><img src="哈哈.jpg" class="img"></li>
+        			<div class="zi">
+        				<li class="yi"><a href="#" class="one kk athree"> <p class="p1">娲皇宫位于是神话传说中中华始祖女娲“炼石补天，抟土造人”的地方</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear nav5">
+        				<li><a href="#" class="one kk"><img src="风景1.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class="p2">河北最美30景”，被评为“河北最具影响力十大“女娲祭典”风景宜人美不胜收</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="风景2.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class=" p3">五指山 菩萨悠然前行，忽见群峰耸翠，瑞气升腾。禁不住放缓脚步，待慧眼望去，只见祥云缠绕，佛光呈现。</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="哈哈1.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class="p4">129师司令部旧址爱国主义教育基地，位于赤岸村，由129师司令部旧址、将军岭和129师陈列馆组成</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="62040.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class=" p5">清泉寺位于石岗村南。寺东有泉水，出自石壁间，原有二泉，一名甘露，一名玉液，甘美清香</p></a></li>
+					</div>
+        			</ul>
+        		</div>
+        	</div>
+        	            <div class="twle">
+        		<div class="tu clear">
+        			<ul class="nav4 clear ">
+        				<li><a href="#"><img src="风景10.jpg" class="img"></a></li>
+        			<div class="zi">
+        				<li class="yi"><a href="#" class="one kk athree"> <p class="p1">店镇王金庄，坐落在太行深山中的一个不起眼的山村。建筑一直遵循着明清始建时期风格</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear nav5">
+        				<li><a href="#" class="one kk"><img src="62034.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class="p2">江家大院始建于清乾隆年间，至今已有二百多年的历史，有50多个院落和东西两个花园组成。</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="62035.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class=" p3">固新村有一棵古槐，高29米，冠幅直径19米，树龄约2000年左右。树旁立有石碑，刻有“天下第一槐”。</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="62036.gif" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class="p4">山势险峻，群峰竞秀，森林茂密，隐天蔽日，四季皆景，春来满山黄花，炎夏松影如荫，深秋红叶遍山</p></a></li>
+					</div>
+        			</ul>
+        			<ul class="nav4 clear  nav5">
+        				<li><a href="#" class="one kk"><img src="风景11.jpg" class="img img6"></a></li>
+        				<div class="zi"><li class="yi"><a href="#" class="one kk athree"><p class=" p5">白云朵朵绕青山，定是瑶池载不住，滑落人间作诗篇。好像徐徐展开的水墨画卷。</p></a></li>
+					</div>
+        			</ul>
+        		</div>
+        	</div>
+    <div class="kk">
+		<div class="jj">
+			<img src="生活.jpeg" height="380px" width="1200px">
+		</div>
+	</div>
+	<div class="last">
+		<div class="lastone clear">
+			<div class="imgshe">
+				<img src="涉县.jpg" height="130px" width="110px">
+			</div>
+			<ul class="lasttwo clear">
+				<li class="lastthree"><a href="#" class="atwo">关于我们</a></li>
+				<li class="lastfour"><a href="#" class="atwo">我们的故事</a></li>
+				<li class="lastfour"><a href="#" class="atwo">联系我们</a></li>
+				<li class="lastfour"><a href="#" class="atwo">客户服务</a></li>
+				<li class="lastfour"><a href="#" class="atwo">意见反馈</a></li>
+			</ul>
+			<ul class="lasttwo clear">
+				<li class="lastthree"><a href="#" class="atwo">新手指南</a></li>
+				<li class="lastfour"><a href="#" class="atwo">如何注册</a></li>
+				<li class="lastfour"><a href="#" class="atwo">路线规划</a></li>
+				<li class="lastfour"><a href="#" class="atwo">酒店预订</a></li>
+				<li class="lastfour"><a href="#" class="atwo">旅游伙伴</a></li>
+			</ul>
+			<ul class="lasttwo clear">
+				<li class="lastthree"><a href="#" class="atwo">友情链接</a></li>
+				<li class="lastfour"><a href="#" class="atwo">涉县旅游</a></li>
+				<li class="lastfour"><a href="#" class="atwo">邯郸旅游</a></li>
+				<li class="lastfour"><a href="#" class="atwo">婚纱摄影</a></li>
+				<li class="lastfour"><a href="#" class="atwo">租车服务</a></li>
+			</ul>
+			<ul class="lasttwo clear">
+				<li class="lastthree"><a href="#" class="atwo">寻优惠</a></li>
+				<li class="lastfour"><a href="#" class="atwo">特卖</a></li>
+				<li class="lastfour"><a href="#" class="atwo">订酒店返现金</a></li>
+				<li class="lastfour"><a href="#" class="atwo">积分商城</a></li>
+				<li class="lastfour"><a href="#" class="atwo">银行特惠游</a></li>
+			</ul>
+		</div>		
+	</div>
+	<div class="sheng">
+		<div class="shengyi">
+			<p class="shenger">
+				本站所有图片及文字介绍来源于网络，如果侵犯了您的版权请告知。我们会及时处理与回复。
+			</p>
+			<p class="shenger">
+				@2012-2020jc版权所有  并保留所有权利 ICP备证书号：HJC自行制作
+			</p>
+		</div>
+	</div>
+    <script type="text/javascript">
+        var np=document.getElementById("np");
+        var nb=document.getElementById("nb");
+        nb.onclick=function(){
+            np.style.display="block";
+            if(!isNaN(np.value))
+            alert("请输入中文或者英文");
+         
+        }
+        function myFocus(obj,color){  
+             if(obj.value=="点此搜索风景"){  
+               obj.value="";  
+             }  
+             obj.style.backgroundColor=color;  
+             }
+         function myblur(obj,color){  
+             obj.style.backgroundColor=color;  
+         }  
+        var kuang = document.querySelector("#lun");                                        //获取整个轮播图的框，方便鼠标放上时停止轮播
+        var pic = document.querySelector("#tuhhh");　　　　　　　　　　　　　
+        var list = document.querySelector("ol").getElementsByTagName("li");
+        var timer;　　　　　　　　　　　　　　　　　　　　　　　　　　　
+        var i = 0;　　　　　　　　　　　　　　　　　　　　　　　　　　　
+        var la = document.getElementById("la");　　　　　　　　　　　　　
+        var ra = document.getElementById("ra");　　　　　　　　　　　　　
+        // 写出图片和控制点切换时的函数
+        function change(num){     　　　　　　　　
+　　　　pic.style.marginLeft = -1200*num+"px";  
+　　　　for(let j = 0; j < 7; j++){　　　　　　　
+　　　　　list[j].setAttribute("class","");          
+　　　　}
+　　　　list[num].className = "on";                 
+　　　　i = num;　　　　　　　　　　　　　  
+        }
+
+        function autoPlay() {         
+　　　　　i++;                            
+　　　　if(i == 7){　　　　　 
+　　　　　i = 0;
+　　　　}
+　　　　change(i);                　
+        }
+
+        var timer = setInterval(autoPlay,1500);     
+        kuang.onmouseover = function(){          
+　　　　　clearInterval(timer)
+        }
+        kuang.onmouseout = function(){　　　　 
+　　　　　timer = setInterval(autoPlay,1500);
+        }
+        for(let j = 0 ; j < 7; j++){                            
+　　　　　list[j].onmouseover = function(){
+　　　　　　change(j);　　　　　　　　　　　
+　　　　　}
+        }
+
+        la.onclick = function(){                
+　　　　　i = i-1;                                 
+　　　　if(i == -1){
+　　　　　i = 6;
+　　　　　change(i)        　　　　
+　　　　　change(i)　　　　　　
+　　　　}
+
+        }
+    ra.onclick = function(){                
+　　　　i = i+1;
+　　　　if(i == 7){
+　　　　i = 0;
+　　　　change(i)
+　　　　}
+        else{
+　　　　　change(i)
+　　　　}
+     }
+        var zoomLevel = 0;
+        var currentWidth = 0;
+        var currentHeight = 0;
+        var originalWidth = 0;
+        var originalHeight = 0;
+        var f = document.getElementById("hh");
+        function initial(){
+            currentWidth = document.myImage.width;
+            currentHeight = document.myImage.height;
+            originalWidth = currentWidth;
+            originalHeight = currentHeight;
+        }
+        f.onclick=function zoomIn(){
+            document.myImage.width = currentWidth*1.6;
+            document.myImage.height = currentHeight*1.6;
+            zoomLevel = zoomLevel + 1;
+            setTimeout(function(){
+                document.myImage.width = originalWidth;
+                document.myImage.height = originalHeight;
+                zoomLevel = 0;
+             }, 1500);
+        }
+        function resetImage(){
+            document.myImage.width = originalWidth;
+            document.myImage.height = originalHeight;
+            zoomLevel = 0;
+        }
+    </script>
+</body>
+</html>
